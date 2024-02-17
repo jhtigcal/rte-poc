@@ -26,7 +26,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SiteHeader />
-          <main className="mt-12">{children}</main>
+          <main className="mt-12">
+            <div className="container max-w-screen-2xl">{children}</div>
+          </main>
         </ThemeProvider>
       </body>
     </html>

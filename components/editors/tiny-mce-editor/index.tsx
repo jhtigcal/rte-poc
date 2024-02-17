@@ -18,6 +18,7 @@ export function TinyMceEditor() {
           { value: "Email", title: "Email" },
         ],
       }}
+      tagName="textarea"
       initialValue="Welcome to TinyMCE!"
     />
   );
