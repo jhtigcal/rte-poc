@@ -1,3 +1,11 @@
+import { LexicalEditor } from "@/components/editors/lexical-editor";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import React from "react";
 
 function LexicalPage() {
@@ -15,14 +23,31 @@ function LexicalPage() {
 
       <br />
 
-      <h2>Demo</h2>
+      <h2 className="mb-2">Demo</h2>
 
-      <ul>
-        <li>Highly extensible</li>
-        <li>Reliable and performant</li>
-        <li>Accessible</li>
-        <li>Best-in-class developer experience</li>
-      </ul>
+      <Card className="mb-2">
+        <CardHeader>
+          <CardTitle>Collapsed</CardTitle>
+          <CardDescription>
+            A single line editor with basic markdown support.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <LexicalEditor variant="single-line" />
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Full</CardTitle>
+          <CardDescription>
+            A multiline editor with dedicated toolbar.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <LexicalEditor />
+        </CardContent>
+      </Card>
 
       <br />
 

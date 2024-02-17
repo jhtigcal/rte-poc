@@ -23,22 +23,13 @@ import { Card, CardContent } from "../ui/card";
 export function DemoEditor() {
   return (
     <div className="mt-8">
-      <h3>Single-line editor with bubble toolbar</h3>
+      <h3>Single-line editor with basic markdown support</h3>
+      <small>For titles that need formatting.</small>
       <div className="mt-4 mb-8">
-        <Popover>
-          <PopoverTrigger asChild>
-            <Input />
-          </PopoverTrigger>
-          <PopoverContent
-            align="start"
-            side="top"
-            className="flex items-center justify-start w-fit p-0"
-          >
-            <Toolbar />
-          </PopoverContent>
-        </Popover>
+        <Input />
       </div>
       <h3>Rich text editor with dedicated toolbar</h3>
+      <small>For ultra long description.</small>
       <div className="mt-4">
         <Card className="mb-2">
           <CardContent className="p-0 flex items-center justify-start">
