@@ -1,6 +1,5 @@
 import {
   Bold,
-  BoldIcon,
   Code,
   Heading1,
   Heading2,
@@ -14,11 +13,10 @@ import {
   Underline,
   Undo,
 } from "lucide-react";
-import { Input } from "../ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Toggle } from "../ui/toggle";
-import { Textarea } from "../ui/textarea";
 import { Card, CardContent } from "../ui/card";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
+import { Toggle } from "../ui/toggle";
 
 export function DemoEditor() {
   return (
