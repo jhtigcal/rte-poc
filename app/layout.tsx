@@ -28,7 +28,7 @@ export default function RootLayout({
         >
           <SiteHeader />
           <main className="my-12">
-            <div className="container max-w-screen-2xl">{children}</div>
+            <div className="container max-w-screen-xl">{children}</div>
           </main>
         </ThemeProvider>
       </body>

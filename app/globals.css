@@ -107,9 +107,13 @@
   }
 
   code {
-    @apply relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
     font-family: "Fira Code", monospace !important;
     font-weight: 400 !important;
+  }
+
+  pre > code {
+    @apply bg-transparent;
   }
 
   .lead {

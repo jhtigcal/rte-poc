@@ -1,4 +1,7 @@
-import { TinyMceEditor } from "@/components/editors/tiny-mce-editor";
+import {
+  TinyMceEditor,
+  TinyMceInlineEditor,
+} from "@/components/editors/tiny-mce-editor";
 
 # TinyMCE
 
@@ -36,6 +39,28 @@ export function TinyMceEditor() {
 }
 ```
 
+This is all the code required to get the TinyMCE editor up and running. The `Editor` component is provided by the `@tinymce/tinymce-react` package, and the `init` prop is used to configure the editor. The `init` prop is an object that contains the configuration options for the editor. The `apiKey` prop is used to authenticate the editor.
+
+## Customization
+
+We shall evaluate the customization options available for the TinyMCE editor in two categories: styling and theming, and functionality.
+
+### Styling and Theming
+
+Out of the box, the TinyMCE editor does not provide the developer with a lot of options for styling and theming. The editor is styled using the default styles provided by the TinyMCE package. The editor does not provide a lot of options for customizing the look and feel of the editor.
+
+This makes it hard/impossible to integrate into our existing Survey Builder application, which requires a lot of customization to match the look and feel of the rest of the application.
+
+### Functionality
+
+The TinyMCE editor provides a lot of functionality out of the box. The editor comes with a lot of plugins that can be used to extend the functionality of the editor. The editor also provides a lot of configuration options that can be used to customize the behavior of the editor.
+
 ## Demo
 
+**Tiny MCE Rich Text Editor**
+
 <TinyMceEditor />
+
+**Tiny MCE Inline Editor**
+
+<TinyMceInlineEditor />
