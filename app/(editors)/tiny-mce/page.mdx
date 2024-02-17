@@ -1,0 +1,41 @@
+import { TinyMceEditor } from "@/components/editors/tiny-mce-editor";
+
+# TinyMCE
+
+TinyMCE is a platform-independent web-based JavaScript HTML WYSIWYG editor control released as open-source software.
+
+## Installation
+
+- This package requires an account with TinyMCE, which can be created [here](https://www.tiny.cloud/auth/login/). I signed up using my Github account, and it was a very straightforward process.
+- Upon signing up, you will be provided with an API key, which is required to use the TinyMCE editor. The API key is used to authenticate the editor and to track usage. The API key is passed to the editor using the `apiKey` prop.
+- The installation is relatively straightforward and can be easily accomplished by following the getting started guide.
+
+```tsx
+import { Editor } from "@tinymce/tinymce-react";
+
+export function TinyMceEditor() {
+  return (
+    <Editor
+      apiKey="your-api-key-here"
+      init={{
+        plugins:
+          "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss",
+        toolbar:
+          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+        tinycomments_mode: "embedded",
+        tinycomments_author: "Author name",
+        mergetags_list: [
+          { value: "First.Name", title: "First Name" },
+          { value: "Email", title: "Email" },
+        ],
+      }}
+      tagName="textarea"
+      initialValue="Welcome to TinyMCE!"
+    />
+  );
+}
+```
+
+## Demo
+
+<TinyMceEditor />

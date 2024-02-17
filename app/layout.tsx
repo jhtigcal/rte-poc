@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./mdx.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SiteHeader />
-          <main className="mt-12">
+          <main className="my-12">
             <div className="container max-w-screen-2xl">{children}</div>
           </main>
         </ThemeProvider>

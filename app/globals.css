@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -105,7 +107,9 @@
   }
 
   code {
-    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+    @apply relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+    font-family: "Fira Code", monospace !important;
+    font-weight: 400 !important;
   }
 
   .lead {

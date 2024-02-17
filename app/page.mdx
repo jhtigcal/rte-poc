@@ -1,4 +1,12 @@
 import { DemoEditor } from "@/components/editors/demo-editor";
+import {
+  Table,
+  TableBody,
+  TableHead,
+  TableHeader,
+  TableRow,
+  TableCell,
+} from "@/components/ui/table";
 import Link from "next/link";
 
 # Welcome
@@ -17,11 +25,100 @@ Here are the editors we will be evaluating:
 We will be looking at the following criteria for each editor:
 
 - Ease of installation
+- Ease of use
+- Pricing
 - Styling and customization
 - Documentation
 - Features
-- Integration with Survey JS
 
 We will also be looking into trying to mold the rich text editors as close to the following components as possible:
 
 <DemoEditor />
+
+# Summary
+
+## Ease of Installation
+
+All of the editors were relatively easy to install and integrate into a fresh Next.js project. The only editor that gave us a bit of trouble was Froala, which required a bit of extra configuration to get it to work.
+
+<Table className="mt-4">
+  <TableHeader>
+    <TableRow>
+      <TableHead>Editor</TableHead>
+      <TableHead>Installation</TableHead>
+      <TableHead>Ease of use</TableHead>
+      <TableHead>Pricing</TableHead>
+      <TableHead>Styling and customization</TableHead>
+      <TableHead>Documentation</TableHead>
+      <TableHead>Features</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>
+        <Link href="/tiny-mce">TinyMCE</Link>
+      </TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Free</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Good</TableCell>
+      <TableCell>Good</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <Link href="/tiptap">Tiptap</Link>
+      </TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Free</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Good</TableCell>
+      <TableCell>Good</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <Link href="/lexical">Lexical</Link>
+      </TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Free</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Good</TableCell>
+      <TableCell>Good</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <Link href="/froala">Froala</Link>
+      </TableCell>
+      <TableCell>Hard</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Free</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Good</TableCell>
+      <TableCell>Good</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <Link href="/ck-editor">CK Editor</Link>
+      </TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Free</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Good</TableCell>
+      <TableCell>Good</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <Link href="/slate">Slate</Link>
+      </TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Free</TableCell>
+      <TableCell>Easy</TableCell>
+      <TableCell>Good</TableCell>
+      <TableCell>Good</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
