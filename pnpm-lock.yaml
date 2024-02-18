@@ -203,6 +203,9 @@ dependencies:
   froala-editor:
     specifier: ^4.1.4
     version: 4.1.4
+  is-hotkey:
+    specifier: ^0.2.0
+    version: 0.2.0
   lexical:
     specifier: ^0.13.1
     version: 0.13.1
@@ -245,6 +248,9 @@ dependencies:
   slate:
     specifier: ^0.102.0
     version: 0.102.0
+  slate-history:
+    specifier: ^0.100.0
+    version: 0.100.0(slate@0.102.0)
   slate-react:
     specifier: ^0.102.0
     version: 0.102.0(react-dom@18.2.0)(react@18.2.0)(slate@0.102.0)
@@ -280,6 +286,9 @@ dependencies:
     version: 3.22.4
 
 devDependencies:
+  '@types/is-hotkey':
+    specifier: ^0.1.10
+    version: 0.1.10
   '@types/node':
     specifier: ^20
     version: 20.11.19
@@ -3038,7 +3047,6 @@ packages:
 
   /@types/is-hotkey@0.1.10:
     resolution: {integrity: sha512-RvC8KMw5BCac1NvRRyaHgMMEtBaZ6wh0pyPTBu7izn4Sj/AX9Y4aXU5c7rX8PnM/knsuUpC1IeoBkANtxBypsQ==}
-    dev: false
 
   /@types/jquery@3.5.29:
     resolution: {integrity: sha512-oXQQC9X9MOPRrMhPHHOsXqeQDnWeCDT3PelUIg/Oy8FAbzSZtFHRjc7IpbfFVmpLtJ+UOoywpRsuO5Jxjybyeg==}
@@ -7076,6 +7084,15 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /slate-history@0.100.0(slate@0.102.0):
+    resolution: {integrity: sha512-x5rUuWLNtH97hs9PrFovGgt3Qc5zkTm/5mcUB+0NR/TK923eLax4HsL6xACLHMs245nI6aJElyM1y6hN0y5W/Q==}
+    peerDependencies:
+      slate: '>=0.65.3'
+    dependencies:
+      is-plain-object: 5.0.0
+      slate: 0.102.0
+    dev: false
+
   /slate-react@0.102.0(react-dom@18.2.0)(react@18.2.0)(slate@0.102.0):
     resolution: {integrity: sha512-SAcFsK5qaOxXjm0hr/t2pvIxfRv6HJGzmWkG58TdH4LdJCsgKS1n6hQOakHPlRVCwPgwvngB6R+t3pPjv8MqwA==}
     peerDependencies:
@@ -8067,9 +8084,4 @@ packages:
       '@ckeditor/ckeditor5-undo': 41.1.0
       '@ckeditor/ckeditor5-watchdog': 41.1.0
       '@ckeditor/ckeditor5-word-count': 41.1.0
-    transitivePeerDependencies:
-      - bufferutil
-      - canvas
-      - supports-color
-      - utf-8-validate
     dev: false

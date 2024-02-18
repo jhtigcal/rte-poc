@@ -2,85 +2,62 @@
 
 import * as React from "react";
 
-import { Descendant, createEditor, Editor, Transforms, Element } from "slate";
-import { Slate, Editable, withReact, RenderElementProps } from "slate-react";
+import isHotkey from "is-hotkey";
+import { createEditor } from "slate";
+import { withHistory } from "slate-history";
+import {
+  Editable,
+  RenderElementProps,
+  RenderLeafProps,
+  Slate,
+  withReact,
+} from "slate-react";
+import { Element, Leaf } from "./components";
+import { HOTKEYS, Hotkey } from "./constants";
+import { Toolbar } from "./toolbar";
+import { toggleMark } from "./utils";
 
-const initialValue: Descendant[] = [
-  {
-    type: "paragraph",
-    children: [{ text: "A line of text in a paragraph." }],
-  },
-];
-
-const EditorComponent = () => {
-  // Create a Slate editor object that won't change across renders.
-  const [editor] = React.useState(() => withReact(createEditor()));
-
-  const renderElement = React.useCallback((props: RenderElementProps) => {
-    switch (props.element.type) {
-      case "code":
-        return <CodeElement {...props} />;
-      default:
-        return <DefaultElement {...props} />;
-    }
-  }, []);
+export default function SlateEditor() {
+  const renderElement = React.useCallback(
+    (props: RenderElementProps) => <Element {...props} />,
+    []
+  );
+  const renderLeaf = React.useCallback(
+    (props: RenderLeafProps) => <Leaf {...props} />,
+    []
+  );
+  const editor = React.useMemo(
+    () => withHistory(withReact(createEditor())),
+    []
+  );
 
   return (
-    <Slate editor={editor} initialValue={initialValue}>
+    <Slate
+      editor={editor}
+      initialValue={[
+        {
+          type: "paragraph",
+          children: [{ text: "" }],
+        },
+      ]}
+    >
+      <Toolbar />
       <Editable
         renderElement={renderElement}
+        renderLeaf={renderLeaf}
+        className="rounded-md border border-input bg-background min-h-44 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        spellCheck
+        autoFocus
         onKeyDown={(event) => {
-          if (!event.ctrlKey) {
-            return;
-          }
-
-          switch (event.key) {
-            // When "`" is pressed, keep our existing code block logic.
-            case "`": {
+          for (const hotkey in HOTKEYS) {
+            if (isHotkey(hotkey, event as any)) {
               event.preventDefault();
-              // @ts-ignore
-              const [match] = Editor.nodes(editor, {
-                // @ts-ignore
-                match: (n) => n.type === "code",
-              });
-              Transforms.setNodes(
-                editor,
-                { type: match ? "paragraph" : "code" },
-                // @ts-ignore
-                { match: (n) => Editor.isBlock(editor, n) }
-              );
-              break;
-            }
-
-            // When "B" is pressed, bold the text in the selection.
-            case "b": {
-              event.preventDefault();
-              Editor.addMark(editor, "bold", true);
-              break;
+              const mark = HOTKEYS[hotkey as Hotkey];
+              toggleMark(editor, mark);
             }
           }
         }}
       />
     </Slate>
   );
-};
-
-const CodeElement = (props: {
-  attributes: React.HTMLAttributes<HTMLPreElement>;
-  children: React.ReactNode;
-}) => {
-  return (
-    <pre {...props.attributes}>
-      <code>{props.children}</code>
-    </pre>
-  );
-};
-
-const DefaultElement = (props: {
-  attributes: React.HTMLAttributes<HTMLParagraphElement>;
-  children: React.ReactNode;
-}) => {
-  return <p {...props.attributes}>{props.children}</p>;
-};
-
-export { EditorComponent as SlateEditor };
+}

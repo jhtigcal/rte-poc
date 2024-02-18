@@ -1,11 +1,10 @@
 "use client";
 
 import { CKEditor } from "@ckeditor/ckeditor5-react";
-// @ts-ignore
-import { Editor } from "ckeditor5-custom-build";
+import * as Build from "@ckeditor/ckeditor5-build-classic";
 
 function CustomEditor(props: { initialData?: string }) {
-  return <CKEditor editor={Editor} data={props.initialData} />;
+  return <CKEditor editor={Build.default} data={props.initialData} />;
 }
 
 export default CustomEditor;
