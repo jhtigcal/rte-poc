@@ -6,7 +6,7 @@ const API_KEY = process.env.NEXT_PUBLIC_TINYMCE_API_KEY;
 
 export function TinyMceEditor() {
   return (
-    <div className="mt-4">
+    <div>
       <Editor
         apiKey={API_KEY}
         tagName="textarea"
@@ -18,7 +18,7 @@ export function TinyMceEditor() {
 
 export function TinyMceInlineEditor() {
   return (
-    <div className="mt-4">
+    <div className="[&>*]:tiny-mce-inline-editor">
       <Editor
         apiKey={API_KEY}
         inline

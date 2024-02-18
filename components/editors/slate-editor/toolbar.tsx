@@ -75,6 +75,7 @@ const MarkButton: React.FC<{
       onPressedChange={(event) => {
         toggleMark(editor, format);
       }}
+      onMouseDown={(e) => e.preventDefault()}
     >
       {children}
     </Toggle>
@@ -96,6 +97,7 @@ const BlockButton: React.FC<{
       onPressedChange={() => {
         toggleBlock(editor, format);
       }}
+      onMouseDown={(e) => e.preventDefault()}
     >
       {children}
     </Toggle>

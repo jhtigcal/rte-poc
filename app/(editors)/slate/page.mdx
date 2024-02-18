@@ -1,44 +1,60 @@
 import SlateEditor from "@/components/editors/slate-editor";
+import { EditorCard } from "@/components/editor-card";
 
 # Slate
 
-Slate is a completely customizable framework for building rich text editors. It is built on top of the `ContentEditable` API and is designed to be highly customizable. It is also designed to be highly extensible, so you can add your own custom plugins to it.
+> Slate is a completely customizable framework for building rich text editors.
+> Slate lets you build rich, intuitive editors like those in Medium, Dropbox Paper or Google Docs&mdash;which are becoming table stakes for applications on the web&mdash;without your codebase getting mired in complexity.
+> &mdash;[Slate](https://www.slatejs.org/)
 
-## Installation
+<br />
 
-To install Slate, you can use the following command:
+<EditorCard type="full">
+  <SlateEditor />
+</EditorCard>
 
-```bash
-pnpm add --save slate slate-react
-```
+## Overview
 
-## Demo
+### Installation
 
-Here is a simple example of how you can use Slate to build a rich text editor:
+- Can be installed via package managers, e.g.: `pnpm add --save slate slate-react`
+- Comes with the most basic editor: a **glorified &lt;textarea /&gt;**.
 
-```tsx
-import * as React from "react";
+### Ease of use
 
-import { Descendant, createEditor } from "slate";
-import { Slate, Editable, withReact } from "slate-react";
+- Slate is headless, it only has the editable content area as its UI.
+- You have full control over the schema of the editor.
+- Editor methods are type safe, and can be extracted to a custom hook/component.
+- This means that it is very flexible, but also requires a lot of work to get it to do anything useful.
+- It is not a WYSIWYG editor, you have to build the UI yourself from the ground up.
+- Has typescript support for editor methods and configuration, but the you have to write a lot of types yourself.
 
-const initialValue: Descendant[] = [
-  {
-    type: "paragraph",
-    children: [{ text: "A line of text in a paragraph." }],
-  },
-];
+### Pricing
 
-const Editor = () => {
-  const [editor] = React.useState(() => withReact(createEditor()));
-  return (
-    <Slate editor={editor} initialValue={initialValue}>
-      <Editable />
-    </Slate>
-  );
-};
+- Free and open source.
+- You heard that right, now put your card away.
 
-export { Editor as SlateEditor };
-```
+### Styling and customization
 
-<SlateEditor />
+- Easily adaptable to existing design system.
+- Highly themeable.
+
+### Documentation
+
+- Provides a lot of examples for different use cases.
+- Has a solid community of users.
+
+### Pros
+
+- Highly customizable.
+- Full control over the schema.
+- Great for building custom editors.
+- You control the life cycle of the editor.
+- It's free and open source.
+- Type safe.
+- Manager will most likely not run out of tasks to give you when developing an RTE using this.
+
+### Cons
+
+- Requires a lot of work to get it to do anything useful.
+- Reinventing the wheel.

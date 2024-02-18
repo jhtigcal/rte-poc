@@ -8,6 +8,7 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import Link from "next/link";
+import { Check, X } from "lucide-react";
 
 # Welcome to my cave
 
@@ -42,7 +43,7 @@ The motivation behind this is to see how easy it is to integrate these editors i
 
 We've also provided support for light mode and dark mode for this project, to simulate how the editors adjust to theming.
 
-# Summary
+## Summary
 
 We have evaluated six rich text editors, three of which are "headless" and three are out of the box WYSIWYG editors. The headless editors are:
 
@@ -56,6 +57,74 @@ The out of the box editors are:
 - Froala
 - CK Editor
 
-## Installation
+### Installation
 
 All of the editors were relatively easy to install, and were relatively easy to integrate into the project. A few of the editors required a bit of extra configuration to get them to work, but nothing too difficult.
+
+<br />
+
+| Editor      | Ease of installation                                           |
+| ----------- | -------------------------------------------------------------- |
+| CK Editor 5 | Purchase license. Select build. Install package and code away. |
+| TinyMCE     | Purchase license. Install package and code away.               |
+| Froala      | Purchase license. Install package and code away.               |
+| Tiptap      | (Might need to purchase license) Install package and code away |
+| Lexical     | Install package and code away                                  |
+| Slate       | Install package and code away                                  |
+
+### Ease of use
+
+**How easy is it to add features to the editor?** All of the editors were relatively easy to add features to, but some of them required a bit more work than others. The headless editors required a bit more work to get them to work, but they were still relatively easy to use.
+
+<br />
+
+| Editor      | Ease of use                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------- |
+| CK Editor 5 | Comes with full fledge editor out-of-the-box. Can customize build as needed. Can keep/omit features. |
+| TinyMCE     | Comes with full fledge editor out-of-the-box. All features included depending on subscription.       |
+| Froala      | Comes with full fledge editor out-of-the-box. All features included depending on subscription.       |
+| Tiptap      | Need extra steps to show a rich text editor. Easy to set up.                                         |
+| Lexical     | Need extra steps to show a rich text editor. Easy to set up but a little more verbose than Tiptap.   |
+| Slate       | Need extra steps to show a rich text editor. Hardest to set up among the headless versions.          |
+
+### Pricing
+
+The general rule is that the more features you want, the more you have to pay. For more details on pricing, you can visit the pages of the respective editors, or take a look at the pricing section in their own websites.
+
+<br />
+
+| Editor      | Pricing                                                              |
+| ----------- | -------------------------------------------------------------------- |
+| CK Editor 5 | Core is free. Extra functionalities are paid and comes with license. |
+| TinyMCE     | Need license to use. Core is free. Extra features are paid.          |
+| Froala      | Everything is paid. Has free trial, but we all know that won't last. |
+| Tiptap      | Core is free. Extra features are paid.                               |
+| Lexical     | Open source.                                                         |
+| Slate       | Open source.                                                         |
+
+### Styling and customization
+
+The headless editors are highly adaptable and can be styled and customized to fit our needs. The out of the box editors are also customizable, but they are not as flexible as the headless editors.
+
+<br />
+
+| Editor      | <div className="mx-auto text-center">Theming support</div> | <div className="mx-auto text-center">Custom toolbar</div> | <div className="mx-auto text-center">Extractable editor commands</div> | <div className="mx-auto text-center">Inline editor</div> | <div className="mx-auto text-center">Custom commands</div> |
+| ----------- | ---------------------------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------- |
+| CK Editor 5 | <Check className="mx-auto"  />                             | <X className="mx-auto" />                                 | <X className="mx-auto" />                                              | <X className="mx-auto" />                                | <X className="mx-auto" />                                  |
+| TinyMCE     | <Check className="mx-auto" />                              | <X className="mx-auto" />                                 | <X className="mx-auto" />                                              | <Check className="mx-auto" />                            | <X className="mx-auto" />                                  |
+| Froala      | <Check className="mx-auto" />                              | <X className="mx-auto" />                                 | <X className="mx-auto" />                                              | <X className="mx-auto" />                                | <X className="mx-auto" />                                  |
+| Tiptap      | <Check className="mx-auto" />                              | <Check className="mx-auto" />                             | <Check className="mx-auto" />                                          | <Check className="mx-auto" />                            | <Check className="mx-auto" />                              |
+| Lexical     | <Check className="mx-auto" />                              | <Check className="mx-auto" />                             | <Check className="mx-auto" />                                          | <Check className="mx-auto" />                            | <Check className="mx-auto" />                              |
+| Slate       | <Check className="mx-auto" />                              | <Check className="mx-auto" />                             | <Check className="mx-auto" />                                          | <Check className="mx-auto" />                            | <Check className="mx-auto" />                              |
+
+### Integration with SurveyJS
+
+- As long as the editor exports a React component, it can be made into a custom question for SurveyJS.
+- We're only concerned on the raw HTML output of the editor, which can be easily extracted from all of the editors.
+- Will refer to this [guide](https://surveyjs.io/survey-creator/examples/form-builder-with-integrated-rich-text-editor/reactjs) for the integration.
+
+### Personal notes
+
+- Personally, I'd recommend going headless for the rich text editors. They are more flexible and can be styled and customized to fit our needs. And they're guaranteed to work with our existing UI library.
+- If I were to choose an out of the box editor, I'd go with TinyMCE. It's the most flexible out of the three, and it's also the cheapest.
+- The out of the box editors are also good, but they are not as flexible as the headless editors. They are also more expensive.

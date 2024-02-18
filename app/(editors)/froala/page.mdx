@@ -1,9 +1,64 @@
 import { FroalaEditor } from "./dynamic-editor";
+import { EditorCard } from "@/components/editor-card";
 
 # Froala
 
-Froala is a WYSIWYG HTML text editor that is designed to be easy to integrate, easy to use, and easy to customize.
+> The Next Generation WYSIWYG HTML Editor.
+> Beautiful JavaScript web editor that's easy to integrate for developers and your users will simply fall in love with its clean design. &mdash;[Froala](https://www.froala.com/)
 
-## Demo
+<br />
 
-<FroalaEditor />
+<EditorCard type="full">
+  <FroalaEditor />
+</EditorCard>
+
+## Overview
+
+### Installation
+
+- Install the `froala-editor` package.
+- Comes with a fully functional rich text editor react component.
+- Import the css file to the rich text editor.
+
+### Ease of use
+
+- Uses a single class to create and customize the editor.
+- You have to register commands and plugins to the editor in order to customize it.
+- A bit similar to the way we customize `SurveyCreator` in SurveyJS (war flashbacks).
+- This feels like a brute force way of customizing the editor, which is not ideal for our use case since we have SurveyJS for that.
+
+### Pricing
+
+- Has a free trial period.
+- Pay $899/year for professional use
+- Pay $1999/year for enterprise use
+- If you're interested, they're running a 20% discount if you manage to purchase by Friday (02/23/2024) midnight.
+
+### Styling and customization
+
+- Supports theming.
+- Like most out-of-the-box fully fledge rich text editors, it's a bit difficult to customize the look and feel of the editor.
+
+### Documentation
+
+- The documentation is good, but not great.
+- A lot of people hate it on Reddit.
+
+### Pros
+
+- Fully fledge rich text editor.
+- Comes with a lot of features out of the box.
+- Has a lot of plugins and commands to customize the editor.
+
+### Cons
+
+- Expensive.
+- Not easy to customize and style.
+- Not the best documentation.
+- Some of the features, we might not even use.
+
+### Personal notes
+
+- I don't think this is the right tool for us.
+- TinyMCE is a better alternative, if we're going for out-of-the-box fully fledge editors.
+- TinyMCE even offers a way to migrate your editor from Froala to TinyMCE.

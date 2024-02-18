@@ -2,65 +2,70 @@ import {
   TinyMceEditor,
   TinyMceInlineEditor,
 } from "@/components/editors/tiny-mce-editor";
+import { EditorCard } from "@/components/editor-card";
 
 # TinyMCE
 
-TinyMCE is a platform-independent web-based JavaScript HTML WYSIWYG editor control released as open-source software.
+> TinyMCE is an online rich-text editor released as open-source software under the MIT License. It converts HTML textarea fields, or other designated HTML elements, into editor instances. &mdash;[Wikipedia](https://en.wikipedia.org/wiki/TinyMCE)
 
-## Installation
+<br />
 
-- This package requires an account with TinyMCE, which can be created [here](https://www.tiny.cloud/auth/login/). I signed up using my Github account, and it was a very straightforward process.
-- Upon signing up, you will be provided with an API key, which is required to use the TinyMCE editor. The API key is used to authenticate the editor and to track usage. The API key is passed to the editor using the `apiKey` prop.
-- The installation is relatively straightforward and can be easily accomplished by following the getting started guide.
+<EditorCard type="collapsed">
+  <TinyMceInlineEditor />
+</EditorCard>
 
-```tsx
-import { Editor } from "@tinymce/tinymce-react";
+<EditorCard type="full">
+  <TinyMceEditor />
+</EditorCard>
 
-export function TinyMceEditor() {
-  return (
-    <Editor
-      apiKey="your-api-key-here"
-      init={{
-        plugins:
-          "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss",
-        toolbar:
-          "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
-        tinycomments_mode: "embedded",
-        tinycomments_author: "Author name",
-        mergetags_list: [
-          { value: "First.Name", title: "First Name" },
-          { value: "Email", title: "Email" },
-        ],
-      }}
-      tagName="textarea"
-      initialValue="Welcome to TinyMCE!"
-    />
-  );
-}
-```
+## Overview
 
-This is all the code required to get the TinyMCE editor up and running. The `Editor` component is provided by the `@tinymce/tinymce-react` package, and the `init` prop is used to configure the editor. The `init` prop is an object that contains the configuration options for the editor. The `apiKey` prop is used to authenticate the editor.
+### Installation
 
-## Customization
+- Create an account with TinyMCE [here](https://www.tiny.cloud/auth/login/).
+- Upon signing up, you will be provided with an API key, which is required to use the TinyMCE editor.
+- Install the `@tinymce/tinymce-react` package.
+- Use the `Editor` component provided by the `@tinymce/tinymce-react` package to render the editor and add the API key to it.
 
-We shall evaluate the customization options available for the TinyMCE editor in two categories: styling and theming, and functionality.
+### Ease of use
 
-### Styling and Theming
+- The TinyMCE editor is easy to use and provides a lot of functionality out of the box.
+- Can be used in three modes: inline, classic, and distraction-free.
+- Works seamlessly with React and provides a lot of configuration options.
+- Editor functions are not extracted, so it is not possible to use only a few functions from the editor.
 
-Out of the box, the TinyMCE editor does not provide the developer with a lot of options for styling and theming. The editor is styled using the default styles provided by the TinyMCE package. The editor does not provide a lot of options for customizing the look and feel of the editor.
+### Pricing
 
-This makes it hard/impossible to integrate into our existing Survey Builder application, which requires a lot of customization to match the look and feel of the rest of the application.
+- Core is free.
+- Essentials ($67/month), Professional ($130/month), and Enterprise (custom pricing) are paid plans.
 
-### Functionality
+### Styling and customization
 
-The TinyMCE editor provides a lot of functionality out of the box. The editor comes with a lot of plugins that can be used to extend the functionality of the editor. The editor also provides a lot of configuration options that can be used to customize the behavior of the editor.
+- The TinyMCE editor can be styled and customized to a great extent.
+- Allows use of skins. Skins can be created manually or using the TinyMCE skin tool.
+- Icon packs can be used to change the icons used in the editor.
+- Toolbar can also be customized, but not extracted.
 
-## Demo
+### Documentation
 
-**Tiny MCE Rich Text Editor**
+- The TinyMCE documentation is extensive and provides a lot of examples.
+- The support is also probably dedicated and extensive as well, if we're going to pay for it.
 
-<TinyMceEditor />
+### Pros
 
-**Tiny MCE Inline Editor**
+- Easy to use and integrate.
+- Provides a lot of functionality out of the box.
+- Works seamlessly with React.
 
-<TinyMceInlineEditor />
+### Cons
+
+- Might be impossible to customize buttons/separate toolbar/create custom events.
+- Paid.
+
+### Personal notes
+
+- Easy to use and integrate
+- Might be impossible to customize buttons/separate toolbar/create custom events
+- You wouldn't really customize the functionality because it all works seamlessly
+- They thought of everything, but they're opinionated on the design of components
+- Does everything, functionality-wise, but lacks a bit in design

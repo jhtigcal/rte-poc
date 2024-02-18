@@ -106,6 +106,10 @@
     @apply my-6 ml-6 list-disc [&>li]:mt-2;
   }
 
+  ul ul {
+    @apply my-0;
+  }
+
   ol {
     @apply my-6 ml-6 list-decimal [&>li]:mt-2;
   }
@@ -130,5 +134,9 @@
 
   small {
     @apply text-sm font-medium leading-none;
+  }
+
+  .tiny-mce-inline-editor {
+    @apply rounded-md overflow-auto border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
   }
 }

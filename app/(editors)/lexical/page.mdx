@@ -1,0 +1,77 @@
+import { LexicalEditor } from "@/components/editors/lexical-editor";
+import { EditorCard } from "@/components/editor-card";
+
+# Lexical
+
+> Lexical is an extensible JavaScript web text-editor framework with an
+> emphasis on reliability, accessibility, and performance. Lexical aims to
+> provide a best-in-class developer experience, so you can easily
+> prototype and build features with confidence. Combined with a highly
+> extensible architecture, Lexical allows developers to create unique text
+> editing experiences that scale in size and functionality. &mdash;[Lexical](https://lexical.dev/docs/intro)
+
+<br />
+
+<EditorCard type="collapsed">
+  <LexicalEditor variant="single-line" />
+</EditorCard>
+
+<EditorCard type="full">
+  <LexicalEditor />
+</EditorCard>
+
+## Overview
+
+### Installation
+
+- Install packages.
+- Import and use editor from package.
+- Add necessary plugins
+
+### Ease of use
+
+- A bit more complex than Tiptap and other out-of-the-box editors.
+- But, it's more flexible and customizable.
+- Exports as react components.
+- Plugins are also react components, which means they can be lazy-loaded.
+- Opinionated when it comes to Editor tree structure.
+
+### Pricing
+
+- Free and open-source.
+- Yep, it's free. Now put your wallet back in your pocket.
+
+### Styling and customization
+
+- They only provide the editable content area. Everything else should be made by you.
+- We can separate/combine functionalities however we want.
+- Plugins are highly flexible.
+- Has own life cycle, but you can easily subscribe to it.
+- Editor commands are dispatch calls (redux-like).
+
+### Documentation
+
+- Good documentation.
+- Has solid user base.
+- Active development.
+- If you find yourself stuck, you can always brute force yourself since the package is made for React.
+
+### Pros
+
+- Highly flexible and customizable.
+- Made for React by Meta engineers.
+- Good documentation.
+- It's free and open-source.
+- Editor commands are dispatch calls and can be used in other parts of the application (as long as you have access to the editor instance).
+
+### Cons
+
+- A bit of a learning curve.
+- Not as easy to use as Tiptap.
+- Doesn't provide support (it's free and open-source, so it's understandable).
+
+### Personal notes
+
+- I like the flexibility and the fact that it's made for React.
+- It's a bit more verbose than Tiptap, but it's more flexible and customizable.
+- I think this one and Tiptap provide are the most balanced in terms of flexibility and ease of use.
