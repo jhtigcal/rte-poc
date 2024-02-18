@@ -9,116 +9,53 @@ import {
 } from "@/components/ui/table";
 import Link from "next/link";
 
-# Welcome
+# Welcome to my cave
 
 Today, we are evaluating six rich text editor packages. We will be taking a look at their upsides, downsides, and how they fare overall in our ever-growing ecosystem.
 
 Here are the editors we will be evaluating:
 
+- [CK Editor](/ck-editor)
 - [TinyMCE](/tiny-mce)
+- [Froala](/froala)
 - [Tiptap](/tiptap)
 - [Lexical](/lexical)
-- [Froala](/froala)
-- [CK Editor](/ck-editor)
 - [Slate](/slate)
 
 We will be looking at the following criteria for each editor:
 
-- Ease of installation
-- Ease of use
-- Pricing
-- Styling and customization
-- Documentation
-- Features
+- **Ease of installation:** How easy is it to install the most basic version of the editor.
+- **Ease of use:** How easy is it to add features?
+- **Pricing:** How much does it cost to use the editor?
+- **Styling and customization:** To what extent can the editor be styled and customized?
+- **Documentation:** How good is the documentation?
 
 We will also be looking into trying to mold the rich text editors as close to the following components as possible:
 
 <DemoEditor />
 
+The motivation behind this is to see how easy it is to integrate these editors into a React project with existing UI library and how well they can be styled and customized to fit our needs, giving us a rough estimate of how much work it would take to integrate them into our existing projects. This project uses the following tech stack for front end development:
+
+- Tailwind CSS
+- shadcn/ui
+- Radix UI
+
+We've also provided support for light mode and dark mode for this project, to simulate how the editors adjust to theming.
+
 # Summary
 
-## Ease of Installation
+We have evaluated six rich text editors, three of which are "headless" and three are out of the box WYSIWYG editors. The headless editors are:
 
-All of the editors were relatively easy to install and integrate into a fresh Next.js project. The only editor that gave us a bit of trouble was Froala, which required a bit of extra configuration to get it to work.
+- Tiptap
+- Lexical
+- Slate
 
-<Table className="mt-4">
-  <TableHeader>
-    <TableRow>
-      <TableHead>Editor</TableHead>
-      <TableHead>Installation</TableHead>
-      <TableHead>Ease of use</TableHead>
-      <TableHead>Pricing</TableHead>
-      <TableHead>Styling and customization</TableHead>
-      <TableHead>Documentation</TableHead>
-      <TableHead>Features</TableHead>
-    </TableRow>
-  </TableHeader>
-  <TableBody>
-    <TableRow>
-      <TableCell>
-        <Link href="/tiny-mce">TinyMCE</Link>
-      </TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Free</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Good</TableCell>
-      <TableCell>Good</TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        <Link href="/tiptap">Tiptap</Link>
-      </TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Free</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Good</TableCell>
-      <TableCell>Good</TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        <Link href="/lexical">Lexical</Link>
-      </TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Free</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Good</TableCell>
-      <TableCell>Good</TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        <Link href="/froala">Froala</Link>
-      </TableCell>
-      <TableCell>Hard</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Free</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Good</TableCell>
-      <TableCell>Good</TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        <Link href="/ck-editor">CK Editor</Link>
-      </TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Free</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Good</TableCell>
-      <TableCell>Good</TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        <Link href="/slate">Slate</Link>
-      </TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Free</TableCell>
-      <TableCell>Easy</TableCell>
-      <TableCell>Good</TableCell>
-      <TableCell>Good</TableCell>
-    </TableRow>
-  </TableBody>
-</Table>
+The out of the box editors are:
+
+- TinyMCE
+- Froala
+- CK Editor
+
+## Installation
+
+All of the editors were relatively easy to install, and were relatively easy to integrate into the project. A few of the editors required a bit of extra configuration to get them to work, but nothing too difficult.

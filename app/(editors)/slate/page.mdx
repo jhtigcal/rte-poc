@@ -1,0 +1,44 @@
+import { SlateEditor } from "@/components/editors/slate-editor";
+
+# Slate
+
+Slate is a completely customizable framework for building rich text editors. It is built on top of the `ContentEditable` API and is designed to be highly customizable. It is also designed to be highly extensible, so you can add your own custom plugins to it.
+
+## Installation
+
+To install Slate, you can use the following command:
+
+```bash
+pnpm add --save slate slate-react
+```
+
+## Demo
+
+Here is a simple example of how you can use Slate to build a rich text editor:
+
+```tsx
+import * as React from "react";
+
+import { Descendant, createEditor } from "slate";
+import { Slate, Editable, withReact } from "slate-react";
+
+const initialValue: Descendant[] = [
+  {
+    type: "paragraph",
+    children: [{ text: "A line of text in a paragraph." }],
+  },
+];
+
+const Editor = () => {
+  const [editor] = React.useState(() => withReact(createEditor()));
+  return (
+    <Slate editor={editor} initialValue={initialValue}>
+      <Editable />
+    </Slate>
+  );
+};
+
+export { Editor as SlateEditor };
+```
+
+<SlateEditor />
