@@ -1,7 +1,8 @@
-import { ClipboardPen } from "lucide-react";
+import { ClipboardPen, Github } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "./navigation";
 import { ThemeToggle } from "./theme-toggle";
+import { Button } from "./ui/button";
 
 export function SiteHeader() {
   return (
@@ -14,7 +15,24 @@ export function SiteHeader() {
           </div>
         </Link>
         <Navigation />
-        <ThemeToggle />
+        <div className="flex gap-2">
+          <a
+            href="https://github.com/jhtigcal/rte-poc"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open in GitHub"
+          >
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              aria-label="GitHub repository"
+            >
+              <Github size={20} />
+            </Button>
+          </a>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
