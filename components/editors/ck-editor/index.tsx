@@ -6,6 +6,7 @@ import * as CKEditor5CustomBuild from "ckeditor5-custom-build";
 function CustomEditor(props: { initialData?: string }) {
   return (
     <CKEditor
+      // @ts-ignore
       editor={CKEditor5CustomBuild.default.Editor}
       data={props.initialData}
     />
