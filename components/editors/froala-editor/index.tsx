@@ -8,4 +8,4 @@ function Editor() {
   return <FroalaEditor tag="textarea" />;
 }
 
-export { Editor as FroalaEditor };
+export default Editor;

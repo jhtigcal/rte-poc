@@ -38,12 +38,15 @@ const EditorComponent = () => {
             // When "`" is pressed, keep our existing code block logic.
             case "`": {
               event.preventDefault();
+              // @ts-ignore
               const [match] = Editor.nodes(editor, {
+                // @ts-ignore
                 match: (n) => n.type === "code",
               });
               Transforms.setNodes(
                 editor,
                 { type: match ? "paragraph" : "code" },
+                // @ts-ignore
                 { match: (n) => Editor.isBlock(editor, n) }
               );
               break;
